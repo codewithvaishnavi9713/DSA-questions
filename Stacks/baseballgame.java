@@ -5,6 +5,7 @@ import java.util.Stack;
 public class baseballgame {
 
     public static void main(String[] arr) {
+        
         String[] strings = new String[]{"5", "2", "C", "D", "+"};
         int n = strings.length;
 
@@ -14,15 +15,15 @@ public class baseballgame {
 
             String s = strings[i];
 
-            if (s.equals("C")) {
+            if (s.equals("C")) {// invalidates the previous score, removing it from the record
                 stack.pop();
             }
 
-            else if (s.equals("D")) {
+            else if (s.equals("D")) {// records a new score that is double the previous score
                 stack.push(stack.peek() * 2);
             }
 
-            else if (s.equals("+")) {
+            else if (s.equals("+")) {//last two number ka sum 
 
                 int top = stack.pop();
                 int second = stack.peek();
